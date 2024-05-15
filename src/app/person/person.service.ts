@@ -68,9 +68,26 @@ export class PersonService {
     ) 
   }
 
-  Get(id:number){
-
+  GetAgeOrder(): Promise<Person[]>{
+    return new Promise(
+      (resolve, reject) =>{
+        this.http.get<Person[]>(this.url+'/OrdenarPorEdad')
+        .pipe(
+          catchError((err)=>{
+            reject(err)
+            throw err;
+          })
+        )
+        .subscribe(
+          (value)=>{
+            resolve(value)
+          }
+        )
+      }
+    ) 
   }
+  
+
   GetAll(): Promise<Person[]>{
     return new Promise(
       (resolve, reject) =>{

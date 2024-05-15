@@ -28,6 +28,10 @@ export class PersonComponent {
     this.editPerson = person
   }
 
+  AgeOrdering(){
+    this.personService.GetAgeOrder().then(value => this.people = value);
+  }
+  
   CompleteOperation(){
     if(this.editPerson !== undefined){
       if(this.editPerson.id === 0){

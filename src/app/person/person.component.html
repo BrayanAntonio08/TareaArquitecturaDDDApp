@@ -2,9 +2,12 @@
     <div class="col">
         <h3>Gestion de personas</h3>
     </div>
-    <div class="col-3 col-sm-2 col-lg-2">
+    <div class="col d-flex justify-content-end">
+        <button type="button" class="btn btn-outline-secondary mx-2" (click)="AgeOrdering()">
+            Ordenar por edad
+        </button>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dataManager" (click)="modalCreate()">
-            Agregrar
+            Agregar
         </button>
     </div>
 </div>
